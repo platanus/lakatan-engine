@@ -1,0 +1,16 @@
+sudo: false
+language: ruby
+rvm:
+  - 2.7.0
+script:
+  - RAILS_ENV=test bundle exec rake db:create db:migrate
+  - bundle exec rspec spec
+before_install: gem install bundler -v 2.1.4
+deploy:
+  provider: rubygems
+  api_key:
+    secure: your_secure_secret
+  gem: lakatan
+  on:
+    tags: true
+    repo: platanus/lakatan-engine

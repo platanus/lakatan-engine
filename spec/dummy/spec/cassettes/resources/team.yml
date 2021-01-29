@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://lakatan.dev/api/v1/bearers/teams/99.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer xxx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 21 Jan 2021 19:39:18 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8; version=1
+      Etag:
+      - W/"2b27041052cbb31eabbb567583cca1f4"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 937c05a6-2109-4974-835c-99d996cad4d7
+      X-Runtime:
+      - '0.018830'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjp7ImlkIjoiOTkiLCJ0eXBlIjoidGVhbSIsImF0dHJpYnV0ZXMiOnsibmFtZSI6IktlZXBlcnMgb2YgdGhlIHNldmVuIGtleXMiLCJwdXJwb3NlIjoiRGVmaW5pciBjw7NtbyBzZSBlbnRyZWdhbiBhY2Nlc29zIHkgcGVybWlzb3MgYSBsb3MgZGlzdGludG9zIHNpc3RlbWFzIHF1ZSBuZWNlc2l0YW1vcyBkZW50cm8gZGUgUGxhdGFudXMuIiwib3JnYW5pemF0aW9uX2lkIjoyLCJzbGFja19pZCI6bnVsbCwidGFza19pZHMiOltdLCJ1c2VyX2lkcyI6WzE0MCwxNTQsMTQ4LDEzOV0sImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTI0VDEyOjE3OjQ3Ljk3OVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0yNFQxMjoxNzo0Ny45NzlaIn19fQ==
+  recorded_at: Thu, 21 Jan 2021 19:39:18 GMT
+recorded_with: VCR 6.0.0

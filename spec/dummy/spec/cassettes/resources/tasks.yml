@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://lakatan.dev/api/v1/bearers/tasks.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer xxx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 21 Jan 2021 19:41:40 GMT
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8; version=1
+      Etag:
+      - W/"9f440e7c8d6c027cf6a35725209f5ed5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - feeff4d2-59ae-466b-b196-afc0dcc4b486
+      X-Runtime:
+      - '0.033896'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkYXRhIjpbeyJpZCI6IjQ4IiwidHlwZSI6InRhc2siLCJhdHRyaWJ1dGVzIjp7Im5hbWUiOiJQcmltZXJhIGVudHJldmlzdGEgc3RhcnR1cCIsImdvYWwiOiJJciBhIGxhIHByaW1lcmEgZW50cmV2aXN0YSBzdGFydHVwIFBWIiwidGVhbV9pZCI6MTAwLCJ1c2VyX21pbmltdW0iOjEsInJhZmZsZV90eXBlIjoiRXF1aXR5IiwibGFiZWxfaWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIwLTEyLTI4VDE4OjMzOjMwLjM3OVoiLCJ1cGRhdGVkX2F0IjoiMjAyMC0xMi0yOFQxODozMzozMC4zNzlaIn19LHsiaWQiOiI1MCIsInR5cGUiOiJ0YXNrIiwiYXR0cmlidXRlcyI6eyJuYW1lIjoiRW50cmV2aXN0YSB0w6ljbmljYSIsImdvYWwiOiJSZWFsaXphciBlbnRyZXZpc3RhIHTDqWNuaWNhIiwidGVhbV9pZCI6MTAzLCJ1c2VyX21pbmltdW0iOjEsInJhZmZsZV90eXBlIjoiTGFiZWxzIiwibGFiZWxfaWQiOjEwLCJjcmVhdGVkX2F0IjoiMjAyMC0xMi0zMFQyMDoyNzo0OS4wMzNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMTItMzBUMjA6Mjc6NDkuMDMzWiJ9fSx7ImlkIjoiNTMiLCJ0eXBlIjoidGFzayIsImF0dHJpYnV0ZXMiOnsibmFtZSI6IlNhcG8gZW50cmV2aXN0YSB0w6ljbmljYSIsImdvYWwiOiJJciBkZSBzYXBvIGEgbGEgZW50cmV2aXN0YSB0w6ljbmljYSIsInRlYW1faWQiOjEwMywidXNlcl9taW5pbXVtIjoxLCJyYWZmbGVfdHlwZSI6IkxhYmVscyIsImxhYmVsX2lkIjoxMSwiY3JlYXRlZF9hdCI6IjIwMjAtMTItMzBUMjA6NTg6MDAuODgxWiIsInVwZGF0ZWRfYXQiOiIyMDIwLTEyLTMwVDIwOjU4OjAwLjg4MVoifX0seyJpZCI6IjQyIiwidHlwZSI6InRhc2siLCJhdHRyaWJ1dGVzIjp7Im5hbWUiOiJQdWJsaWNhciBlbiByZWRlcyBzb2NpYWxlcyIsImdvYWwiOiJQdWJsaWNhciBhbGdvIGVuIFR3aXR0ZXIsIEluc3RhZ3JhbSB5IExpbmtlZGluIiwidGVhbV9pZCI6OTYsInVzZXJfbWluaW11bSI6MSwicmFmZmxlX3R5cGUiOiJCYWxhbmNlZCIsImxhYmVsX2lkIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0xMi0xOFQxNjowOToyOC4yNTFaIiwidXBkYXRlZF9hdCI6IjIwMjAtMTItMThUMTY6MDk6MjguMjUxWiJ9fSx7ImlkIjoiNDMiLCJ0eXBlIjoidGFzayIsImF0dHJpYnV0ZXMiOnsibmFtZSI6IkhhY2VyIGNhcnR1bGluYSIsImdvYWwiOiJIYWNlciBsYSBpbWFnZW4gcGFyYSB1bmEgcHVibGljYWNpw7NuIGVuIHJlZGVzIHNvY2lhbGVzIiwidGVhbV9pZCI6OTYsInVzZXJfbWluaW11bSI6MSwicmFmZmxlX3R5cGUiOiJCYWxhbmNlZCIsImxhYmVsX2lkIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0xMi0xOFQxNjoyNDo0NC42OTNaIiwidXBkYXRlZF9hdCI6IjIwMjAtMTItMThUMTY6MjQ6NDQuNjkzWiJ9fSx7ImlkIjoiNDYiLCJ0eXBlIjoidGFzayIsImF0dHJpYnV0ZXMiOnsibmFtZSI6IlB1YmxpY2FyIHZpZGVvIGVuIFlvdXR1YmUiLCJnb2FsIjoiU3ViaXIsIGNvcnRhciB5IHB1YmxpY2FyIHZpZGVvIGVuIFlvdXR1YmUiLCJ0ZWFtX2lkIjo5NiwidXNlcl9taW5pbXVtIjoyLCJyYWZmbGVfdHlwZSI6IkVxdWl0eSIsImxhYmVsX2lkIjowLCJjcmVhdGVkX2F0IjoiMjAyMC0xMi0yNFQxNTo0MjoyMi4yNThaIiwidXBkYXRlZF9hdCI6IjIwMjAtMTItMjRUMTU6NDI6MjIuMjU4WiJ9fSx7ImlkIjoiNTUiLCJ0eXBlIjoidGFzayIsImF0dHJpYnV0ZXMiOnsibmFtZSI6Ik5ld3NsZXR0ZXIiLCJnb2FsIjoiRXNjcmliaXIgZWwgTmV3c2xldHRlciIsInRlYW1faWQiOjk2LCJ1c2VyX21pbmltdW0iOjEsInJhZmZsZV90eXBlIjoiRXF1aXR5IiwibGFiZWxfaWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIxLTAxLTA0VDE4OjQ5OjQyLjI1MloiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wMS0wNFQxODo0OTo0Mi4yNTJaIn19LHsiaWQiOiI1OSIsInR5cGUiOiJ0YXNrIiwiYXR0cmlidXRlcyI6eyJuYW1lIjoiRmVlZGJhY2sgdHJhaW5lZSIsImdvYWwiOiJEYXIgZmVlZGJhY2sgYSB1biB0cmFpbmVlIGFsIGZpbmFsIGRlIHN1IHBlcmlvZG8iLCJ0ZWFtX2lkIjoxMTMsInVzZXJfbWluaW11bSI6MSwicmFmZmxlX3R5cGUiOiJSYW5kb20iLCJsYWJlbF9pZCI6MCwiY3JlYXRlZF9hdCI6IjIwMjEtMDEtMjBUMTU6MjE6MzUuNDY0WiIsInVwZGF0ZWRfYXQiOiIyMDIxLTAxLTIwVDE1OjIxOjM1LjQ2NFoifX0seyJpZCI6IjYwIiwidHlwZSI6InRhc2siLCJhdHRyaWJ1dGVzIjp7Im5hbWUiOiJGZWVkYmFjayBiYWNrIiwiZ29hbCI6IkVudHJlZ2FyIGZlZWJhY2sgZGUgYmFjayBhIHVuIGRldiBubyB0cmFpbmVlIiwidGVhbV9pZCI6MTE0LCJ1c2VyX21pbmltdW0iOjEsInJhZmZsZV90eXBlIjoiUmFuZG9tIiwibGFiZWxfaWQiOjAsImNyZWF0ZWRfYXQiOiIyMDIxLTAxLTIwVDE1OjUxOjU2Ljk0OVoiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wMS0yMFQxNTo1MTo1Ni45NDlaIn19LHsiaWQiOiI2MSIsInR5cGUiOiJ0YXNrIiwiYXR0cmlidXRlcyI6eyJuYW1lIjoiRmVlZGJhY2sgRnJvbnQiLCJnb2FsIjoiRW50cmVnYXIgZmVlZGJhY2sgZGUgZnJvbnQgYSB1biBkZXYgbm8gdHJhaW5lZSIsInRlYW1faWQiOjExNSwidXNlcl9taW5pbXVtIjoxLCJyYWZmbGVfdHlwZSI6IlJhbmRvbSIsImxhYmVsX2lkIjowLCJjcmVhdGVkX2F0IjoiMjAyMS0wMS0yMFQxNTo1OToyNC43MzlaIiwidXBkYXRlZF9hdCI6IjIwMjEtMDEtMjBUMTU6NTk6MjQuNzM5WiJ9fV19
+  recorded_at: Thu, 21 Jan 2021 19:41:40 GMT
+recorded_with: VCR 6.0.0

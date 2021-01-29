@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://lakatan.dev/api/v1/bearers/tasks/1/raffles.json
+    body:
+      encoding: UTF-8
+      string: '{"user_ids":[1,3]}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer Bjc8Kq2v4k6Avxa1iMaG
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8; version=1
+      Etag:
+      - W/"fe5c6452beea1aa1c25512f2abfd6376"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 025f44c3-6ebd-4127-960e-786d49e3d147
+      X-Runtime:
+      - '0.080441'
+      Vary:
+      - Origin
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"178","type":"raffle","attributes":{"task_id":1,"user_ids":[1]}}}'
+  recorded_at: Fri, 22 Jan 2021 23:02:59 GMT
+recorded_with: VCR 6.0.0
