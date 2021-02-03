@@ -36,7 +36,7 @@ module Lakatan
     end
 
     def build_lakatan_class(resource_name)
-      "Lakatan::#{resource_name.to_s.classify}".constantize
+      "Lakatan::Api::#{resource_name.to_s.classify}".constantize
     end
 
     class_methods do

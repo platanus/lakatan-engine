@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Lakatan::User do
+describe Lakatan::Api::User do
   it_behaves_like "find resource", 115 do
     let(:expected_attributes) do
       %i{

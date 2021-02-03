@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Lakatan::Team do
+describe Lakatan::Api::Team do
   it_behaves_like "find resource", 99 do
     let(:expected_attributes) do
       %i{

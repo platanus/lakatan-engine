@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Lakatan::Task do
+describe Lakatan::Api::Task do
   it_behaves_like "find resource", 48 do
     let(:expected_attributes) do
       %i{
@@ -44,7 +44,7 @@ describe Lakatan::Task do
     context "with some teams matching team_ids" do
       let(:team_id) { 99 }
 
-      it { expect(task.team).to be_a(Lakatan::Team) }
+      it { expect(task.team).to be_a(Lakatan::Api::Team) }
     end
   end
 
@@ -54,11 +54,11 @@ describe Lakatan::Task do
     let(:user_ids) { double }
 
     before do
-      allow(Lakatan::Raffle).to receive(:raffle)
+      allow(Lakatan::Api::Raffle).to receive(:raffle)
     end
 
     it do
-      expect(Lakatan::Raffle).to receive(:raffle)
+      expect(Lakatan::Api::Raffle).to receive(:raffle)
         .with(user_ids: user_ids, task_id: task_id).once
       task.raffle(user_ids: user_ids)
     end
