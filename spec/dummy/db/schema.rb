@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_190823) do
+ActiveRecord::Schema.define(version: 2021_02_03_193338) do
+
+  create_table "lakatan_tasks", force: :cascade do |t|
+    t.string "name"
+    t.string "goal"
+    t.string "raffle_type"
+    t.integer "label_id"
+    t.integer "team_id", null: false
+    t.integer "user_minimum"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_lakatan_tasks_on_team_id"
+  end
 
   create_table "lakatan_teams", force: :cascade do |t|
     t.string "name"
@@ -21,4 +33,5 @@ ActiveRecord::Schema.define(version: 2021_02_03_190823) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "lakatan_tasks", "teams"
 end
