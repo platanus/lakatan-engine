@@ -2,6 +2,19 @@ require "rails_helper"
 
 describe Lakatan::Task do
   it_behaves_like "find resource", 48 do
+    let(:expected_attributes) do
+      %i{
+        name
+        goal
+        raffle_type
+        label_id
+        team_id
+        user_minimum
+        created_at
+        updated_at
+      }
+    end
+
     it { expect(resource.id).to eq(resource_id) }
     it { expect(resource.name).to eq("Primera entrevista startup") }
     it { expect(resource.goal).to eq("Ir a la primera entrevista startup PV") }

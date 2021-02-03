@@ -2,6 +2,17 @@ require "rails_helper"
 
 describe Lakatan::User do
   it_behaves_like "find resource", 115 do
+    let(:expected_attributes) do
+      %i{
+        created_at
+        email
+        last_org
+        name
+        team_ids
+        updated_at
+      }
+    end
+
     it { expect(resource.id).to eq(resource_id) }
     it { expect(resource.name).to eq("Andrés Matte") }
     it { expect(resource.email).to eq("andres@platan.us") }

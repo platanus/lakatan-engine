@@ -2,6 +2,17 @@ require "rails_helper"
 
 describe Lakatan::Team do
   it_behaves_like "find resource", 99 do
+    let(:expected_attributes) do
+      %i{
+        created_at
+        name
+        purpose
+        task_ids
+        updated_at
+        user_ids
+      }
+    end
+
     it { expect(resource.id).to eq(resource_id) }
     it { expect(resource.name).to eq("Keepers of the seven keys") }
     it { expect(resource.purpose).to match(/Definir cómo se entregan accesos/) }

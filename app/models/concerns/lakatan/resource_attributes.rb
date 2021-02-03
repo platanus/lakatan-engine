@@ -40,7 +40,12 @@ module Lakatan
     end
 
     class_methods do
+      attr_accessor :resource_attributes
+
       def declare_attribute(attribute_name, attribute_type = nil)
+        self.resource_attributes ||= []
+        self.resource_attributes << attribute_name.to_sym
+
         define_method(attribute_name) do
           value = get_attribute(attribute_name)
           format_attribute_value(value, attribute_type)

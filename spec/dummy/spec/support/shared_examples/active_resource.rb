@@ -10,6 +10,7 @@ shared_examples 'find resource' do |res_id|
   after { VCR.eject_cassette }
 
   it { expect(resource).to be_a(described_class) }
+  it { expect(described_class.resource_attributes).to contain_exactly(*expected_attributes) }
 end
 
 shared_examples 'all resources' do
