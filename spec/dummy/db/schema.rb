@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_193338) do
+ActiveRecord::Schema.define(version: 2021_02_03_194436) do
 
   create_table "lakatan_tasks", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2021_02_03_193338) do
     t.string "purpose"
     t.text "task_ids"
     t.text "user_ids"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lakatan_users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.integer "last_org"
+    t.text "team_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
