@@ -6,14 +6,14 @@ module Lakatan
 
     let(:model_name) { "Task" }
     let(:model_id) { 48 }
-    let(:action) { "create" }
+    let(:notification_action) { "create" }
 
     def perform_now
-      described_class.perform_now(model_name, model_id, action)
+      described_class.perform_now(model_name, model_id, notification_action)
     end
 
     def perform_later
-      described_class.perform_later(model_name, model_id, action)
+      described_class.perform_later(model_name, model_id, notification_action)
     end
 
     before { VCR.insert_cassette("resources/task") }
@@ -26,8 +26,8 @@ module Lakatan
       )
     end
 
-    context "with no action" do
-      let(:action) { nil }
+    context "with no notification_action" do
+      let(:notification_action) { nil }
 
       it { expect { perform_now }.to raise_error(/Must be 'create', 'update' or 'destroy'/) }
     end
@@ -56,8 +56,8 @@ module Lakatan
       it { expect { perform_now }.to raise_error(/invalid model id/) }
     end
 
-    context "with create action" do
-      let(:action) { "create" }
+    context "with create notification_action" do
+      let(:notification_action) { "create" }
 
       it { expect { perform_now }.to change { Lakatan::Task.count }.from(0).to(1) }
 
@@ -70,8 +70,8 @@ module Lakatan
       end
     end
 
-    context "with create action" do
-      let(:action) { "update" }
+    context "with update notification_action" do
+      let(:notification_action) { "update" }
 
       it { expect { perform_now }.to change { Lakatan::Task.count }.from(0).to(1) }
 
@@ -84,8 +84,8 @@ module Lakatan
       end
     end
 
-    context "with destroy action" do
-      let(:action) { "destroy" }
+    context "with destroy notification_action" do
+      let(:notification_action) { "destroy" }
 
       it { expect { perform_now }.to raise_error(ActiveRecord::RecordNotFound) }
 

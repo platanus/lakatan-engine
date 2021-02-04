@@ -8,3 +8,4 @@ spec/dummy/log/*.log
 spec/dummy/tmp/
 coverage/
 db/.DS_Store
+.DS_Store
