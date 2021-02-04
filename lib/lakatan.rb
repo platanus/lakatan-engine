@@ -6,6 +6,8 @@ require "lakatan/engine"
 module Lakatan
   extend self
 
+  class Error < StandardError; end
+
   attr_accessor :site_url, :url_prefix, :authorization_token
 
   def setup

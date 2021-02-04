@@ -17,11 +17,10 @@ ActiveRecord::Schema.define(version: 2021_02_03_194436) do
     t.string "goal"
     t.string "raffle_type"
     t.integer "label_id"
-    t.integer "team_id", null: false
+    t.bigint "team_id"
     t.integer "user_minimum"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["team_id"], name: "index_lakatan_tasks_on_team_id"
   end
 
   create_table "lakatan_teams", force: :cascade do |t|
@@ -42,5 +41,4 @@ ActiveRecord::Schema.define(version: 2021_02_03_194436) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "lakatan_tasks", "teams"
 end

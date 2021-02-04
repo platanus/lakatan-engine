@@ -1,5 +1,5 @@
 module Lakatan
   class Task < ApplicationRecord
-    belongs_to :team
+    include Lakatan::ApiResource
   end
 end

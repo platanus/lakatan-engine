@@ -5,7 +5,7 @@ class CreateLakatanTasks < ActiveRecord::Migration[6.1]
       t.string :goal
       t.string :raffle_type
       t.integer :label_id
-      t.references :team, null: false, foreign_key: true
+      t.bigint :team_id
       t.integer :user_minimum
 
       t.timestamps
