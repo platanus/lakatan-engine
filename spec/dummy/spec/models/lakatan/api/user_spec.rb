@@ -5,6 +5,9 @@ describe Lakatan::Api::User do
     let(:expected_attributes) do
       %i{
         created_at
+        slack_id
+        personal_interview_url
+        technical_interview_url
         email
         last_org
         name

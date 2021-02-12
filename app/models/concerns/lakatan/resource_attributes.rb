@@ -15,7 +15,7 @@ module Lakatan
       attrs = attributes[:attributes]
       return if attrs.nil?
 
-      attrs.send(name)
+      attrs.send(name) if attrs.respond_to?(name)
     end
 
     def format_attribute_value(value, attribute_type)

@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 2021_02_03_194436) do
   create_table "lakatan_users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "slack_id"
+    t.string "personal_interview_url"
+    t.string "technical_interview_url"
     t.integer "last_org"
     t.text "team_ids"
     t.datetime "created_at", precision: 6, null: false
