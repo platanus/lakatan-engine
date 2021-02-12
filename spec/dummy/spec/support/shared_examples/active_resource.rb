@@ -60,4 +60,22 @@ shared_examples 'api resource' do |res_id|
       it { expect(perform).to eq(true) }
     end
   end
+
+  describe "#find_from_cache_or_create_from_api!" do
+    let(:id_param) { resource_id }
+
+    def perform
+      described_class.find_from_cache_or_create_from_api!(id_param)
+    end
+
+    it { expect { perform }.to change { described_class.count }.from(0).to(1) }
+    it { expect(perform).to be_a(described_class) }
+
+    context "with existent resource" do
+      before { create(resource_name, id: resource_id) }
+
+      it { expect { perform }.not_to(change { described_class.count }) }
+      it { expect(perform).to be_a(described_class) }
+    end
+  end
 end

@@ -2,6 +2,14 @@ module Lakatan
   module ApiResource
     extend ActiveSupport::Concern
 
+    class_methods do
+      def find_from_cache_or_create_from_api!(id)
+        resource = find_or_initialize_by(id: id)
+        resource.update_attributes_from_api! if resource.new_record?
+        resource
+      end
+    end
+
     def update_attributes_from_api!
       raise Lakatan::Error.new("can't update resource without id") if id.blank?
 
