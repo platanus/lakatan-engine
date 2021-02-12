@@ -27,8 +27,6 @@ require 'rspec/rails'
 require 'factory_bot_rails'
 require "vcr"
 
-ActiveRecord::Migration.maintain_test_schema!
-
 Dir[::Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
 Lakatan.setup do |config|

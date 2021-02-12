@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Lakatan::Raffle do
+describe Lakatan::Api::Raffle do
   describe "#raffle" do
     let(:task_id) { 1 }
     let(:user_ids) { [1, 3] }
@@ -43,6 +43,6 @@ describe Lakatan::Raffle do
 
     after { VCR.eject_cassette }
 
-    it { expect(raffle.task).to be_a(Lakatan::Task) }
+    it { expect(raffle.task).to be_a(Lakatan::Api::Task) }
   end
 end

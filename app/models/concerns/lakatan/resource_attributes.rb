@@ -15,7 +15,7 @@ module Lakatan
       attrs = attributes[:attributes]
       return if attrs.nil?
 
-      attrs.send(name)
+      attrs.send(name) if attrs.respond_to?(name)
     end
 
     def format_attribute_value(value, attribute_type)
@@ -36,11 +36,16 @@ module Lakatan
     end
 
     def build_lakatan_class(resource_name)
-      "Lakatan::#{resource_name.to_s.classify}".constantize
+      "Lakatan::Api::#{resource_name.to_s.classify}".constantize
     end
 
     class_methods do
+      attr_accessor :resource_attributes
+
       def declare_attribute(attribute_name, attribute_type = nil)
+        self.resource_attributes ||= []
+        self.resource_attributes << attribute_name.to_sym
+
         define_method(attribute_name) do
           value = get_attribute(attribute_name)
           format_attribute_value(value, attribute_type)

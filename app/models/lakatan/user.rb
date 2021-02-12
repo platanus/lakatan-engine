@@ -1,11 +1,21 @@
 module Lakatan
-  class User < Lakatan::BaseModel
-    declare_attribute(:name, :string)
-    declare_attribute(:email, :string)
-    declare_attribute(:created_at, :datetime)
-    declare_attribute(:updated_at, :datetime)
-    declare_attribute(:last_org, :integer)
-    declare_attribute(:team_ids)
-    declare_nested_collection(:teams)
+  class User < ApplicationRecord
+    include Lakatan::ApiResource
+
+    serialize :team_ids, Array
+
+    def first_name
+      get_name_part(:first)
+    end
+
+    def last_name
+      get_name_part(:last)
+    end
+
+    private
+
+    def get_name_part(part)
+      name.to_s.split(" ").send(part)
+    end
   end
 end

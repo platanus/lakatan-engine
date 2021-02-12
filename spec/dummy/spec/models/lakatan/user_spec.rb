@@ -1,35 +1,40 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe Lakatan::User do
-  it_behaves_like "find resource", 115 do
-    it { expect(resource.id).to eq(resource_id) }
-    it { expect(resource.name).to eq("Andrés Matte") }
-    it { expect(resource.email).to eq("andres@platan.us") }
-    it { expect(resource.created_at).to be_a(DateTime) }
-    it { expect(resource.updated_at).to be_a(DateTime) }
-    it { expect(resource.last_org).to be_nil }
-    it { expect(resource.team_ids).to contain_exactly(96, 97, 103) }
-  end
-
-  it_behaves_like "all resources"
-
-  describe "#teams" do
-    let(:team_ids) { [] }
-    let(:user) { described_class.new }
-
-    before do
-      VCR.insert_cassette("resources/teams")
-      allow(user).to receive(:team_ids).and_return(team_ids)
+module Lakatan
+  RSpec.describe User, type: :model do
+    it 'has a valid factory' do
+      expect(build(:user)).to be_valid
     end
 
-    after { VCR.eject_cassette }
+    it_behaves_like "api resource", 115 do
+      let(:resource_changes) do
+        {
+          name: "Andrés Matte",
+          team_ids: [103, 97, 96]
+        }
+      end
+    end
 
-    it { expect(user.teams).to eq([]) }
+    describe "#first|last_name" do
+      let(:name) { "Leandro Segovia" }
+      let(:user) { build_stubbed(:user, name: name) }
 
-    context "with some teams matching team_ids" do
-      let(:team_ids) { [103, 666, 999] }
+      it { expect(user.first_name).to eq("Leandro") }
+      it { expect(user.last_name).to eq("Segovia") }
 
-      it { expect(user.teams.count).to eq(1) }
+      context "with more than two words" do
+        let(:name) { "Leandro Danilo Luis Segovia Longone" }
+
+        it { expect(user.first_name).to eq("Leandro") }
+        it { expect(user.last_name).to eq("Longone") }
+      end
+
+      context "with no name" do
+        let(:name) { nil }
+
+        it { expect(user.first_name).to eq(nil) }
+        it { expect(user.last_name).to eq(nil) }
+      end
     end
   end
 end
