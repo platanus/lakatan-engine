@@ -14,5 +14,27 @@ module Lakatan
         }
       end
     end
+
+    describe "#first|last_name" do
+      let(:name) { "Leandro Segovia" }
+      let(:user) { build_stubbed(:user, name: name) }
+
+      it { expect(user.first_name).to eq("Leandro") }
+      it { expect(user.last_name).to eq("Segovia") }
+
+      context "with more than two words" do
+        let(:name) { "Leandro Danilo Luis Segovia Longone" }
+
+        it { expect(user.first_name).to eq("Leandro") }
+        it { expect(user.last_name).to eq("Longone") }
+      end
+
+      context "with no name" do
+        let(:name) { nil }
+
+        it { expect(user.first_name).to eq(nil) }
+        it { expect(user.last_name).to eq(nil) }
+      end
+    end
   end
 end
