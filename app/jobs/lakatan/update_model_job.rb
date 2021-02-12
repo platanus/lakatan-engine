@@ -24,11 +24,11 @@ module Lakatan
       if update_request.notification_action == :destroy
         destroy_resource!
       else
-        update_resource!
+        update_or_create_resource!
       end
     end
 
-    def update_resource!
+    def update_or_create_resource!
       model_instance = model_class.find_or_initialize_by(id: update_request.model_id)
       model_instance.update_attributes_from_api!
     end
