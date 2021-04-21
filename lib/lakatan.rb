@@ -8,8 +8,20 @@ module Lakatan
 
   class Error < StandardError; end
 
+  VALID_MODEL_NAMES = %w{Team Task User}
+  VALID_MODEL_ACTIONS = %i{create update destroy}
+
   attr_writer :site_url, :url_prefix, :job_queue
   attr_accessor :authorization_token
+
+  def models
+    VALID_MODEL_NAMES.map do |model_name|
+      {
+        api: "Lakatan::Api::#{model_name}".constantize,
+        active_record: "Lakatan::#{model_name}".constantize
+      }
+    end
+  end
 
   def site_url
     return "https://lakatan.dev" unless @site_url

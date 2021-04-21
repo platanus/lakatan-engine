@@ -2,9 +2,6 @@ module Lakatan
   class UpdateModelJob < ApplicationJob
     queue_as Lakatan.job_queue
 
-    VALID_MODEL_NAMES = %w{Team Task User}
-    VALID_ACTIONS = %w{create update destroy}
-
     def perform(model_name, model_id, notification_action)
       @update_request = Lakatan::UpdateModelRequest.new(
         model_name: model_name,
