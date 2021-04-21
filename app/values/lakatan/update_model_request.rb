@@ -1,8 +1,5 @@
 module Lakatan
   class UpdateModelRequest
-    VALID_MODEL_NAMES = %w{Team Task User}
-    VALID_ACTIONS = %i{create update destroy}
-
     def initialize(params = {})
       params = params.with_indifferent_access
       self.model_name = params[:model_name]
@@ -15,7 +12,7 @@ module Lakatan
     private
 
     def model_name=(value)
-      if !VALID_MODEL_NAMES.include?(value)
+      if !Lakatan::VALID_MODEL_NAMES.include?(value)
         raise Lakatan::Error.new("invalid model name")
       end
 
@@ -31,7 +28,7 @@ module Lakatan
     end
 
     def notification_action=(value)
-      if !VALID_ACTIONS.include?(value.to_s.to_sym)
+      if !Lakatan::VALID_MODEL_ACTIONS.include?(value.to_s.to_sym)
         raise Lakatan::Error.new(
           "invalid notification_action. Must be 'create', 'update' or 'destroy'"
         )
