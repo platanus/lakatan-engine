@@ -8,6 +8,7 @@ class CreateLakatanUsers < ActiveRecord::Migration[6.1]
       t.string :technical_interview_url
       t.integer :last_org
       t.text :team_ids
+      t.json :dynamic_attributes, default: {}
 
       t.timestamps
     end

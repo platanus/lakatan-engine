@@ -7,7 +7,7 @@ module Lakatan
     end
 
     it_behaves_like "api resource", 99 do
-      let(:resource_changes) do
+      let(:expected_attributes) do
         {
           name: "Keepers of the seven keys",
           user_ids: [140, 154, 148, 139]

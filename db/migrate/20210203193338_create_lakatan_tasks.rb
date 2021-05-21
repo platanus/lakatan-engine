@@ -7,6 +7,7 @@ class CreateLakatanTasks < ActiveRecord::Migration[6.1]
       t.integer :label_id
       t.bigint :team_id
       t.integer :user_minimum
+      t.json :dynamic_attributes, default: {}
 
       t.timestamps
     end
