@@ -16,6 +16,8 @@ describe Lakatan::Api::User do
       }
     end
 
+    it { expect(resource.dynamic_attributes.keys.count).to eq(1) }
+    it { expect(resource.dynamic_attributes[:picture].attributes).to be_a(Hash) }
     it { expect(resource.id).to eq(resource_id) }
     it { expect(resource.name).to eq("Andrés Matte") }
     it { expect(resource.email).to eq("andres@platan.us") }
