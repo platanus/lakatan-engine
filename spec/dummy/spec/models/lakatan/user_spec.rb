@@ -7,10 +7,21 @@ module Lakatan
     end
 
     it_behaves_like "api resource", 115 do
-      let(:resource_changes) do
+      let(:expected_attributes) do
         {
           name: "Andrés Matte",
-          team_ids: [103, 97, 96]
+          team_ids: [103, 97, 96],
+          dynamic_attributes: {
+            "picture" => {
+              "id" => "8530c09a04ee89db167999cc2b71a364.jpg",
+              "storage" => "store",
+              "metadata" => {
+                "size" => 48338,
+                "filename" => "IMG_0873-removebg copy.jpg",
+                "mime_type" => "image/jpeg"
+              }
+            }
+          }
         }
       end
     end

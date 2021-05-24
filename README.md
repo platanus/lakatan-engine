@@ -47,6 +47,13 @@ user.teams #=> [#<Lakatan::Api::Team:0x00007f93be276178>, #<Lakatan::Api::Team:0
 ```ruby
 users = Lakatan::Api::User.all
 ```
+#### Dynamic Attributes
+
+The dynamic attributes defined on Lakatan for the organizarion users will be stored in the `Lakatan::User#dynamic_attributes` attribute. You can access these attributes as follows:
+
+```ruby
+user.get_dynamic_attr(:github_username) #=> "ldlsegovia"
+```
 
 ### Team
 
@@ -165,6 +172,14 @@ config.middleware.insert_before 0, Rack::Cors do
     resource '/lakatan/notifications', headers: :any, methods: [:post]
   end
 end
+```
+
+### Sync
+
+If you want to force the synchronization between Laktan and your application, run the following job:
+
+```ruby
+Lakatan::SyncModelsJob.perform_now
 ```
 
 ## Testing

@@ -42,10 +42,10 @@ shared_examples 'api resource' do |res_id|
 
     it { expect(perform).to eq(true) }
 
-    it "updates resource with expected api data" do
-      expect(resource).not_to have_attributes(resource_changes)
+    it "updates resource with expected api attributes" do
+      expect(resource).not_to have_attributes(expected_attributes)
       perform
-      expect(resource.reload).to have_attributes(resource_changes)
+      expect(resource.reload).to have_attributes(expected_attributes)
     end
 
     context "with blank resource id" do

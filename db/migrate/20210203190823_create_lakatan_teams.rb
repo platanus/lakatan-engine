@@ -5,6 +5,7 @@ class CreateLakatanTeams < ActiveRecord::Migration[6.1]
       t.string :purpose
       t.text :task_ids
       t.text :user_ids
+      t.json :dynamic_attributes, default: {}
 
       t.timestamps
     end

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_194436) do
     t.integer "label_id"
     t.bigint "team_id"
     t.integer "user_minimum"
+    t.json "dynamic_attributes", default: {}
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_194436) do
     t.string "purpose"
     t.text "task_ids"
     t.text "user_ids"
+    t.json "dynamic_attributes", default: {}
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_194436) do
     t.string "technical_interview_url"
     t.integer "last_org"
     t.text "team_ids"
+    t.json "dynamic_attributes", default: {}
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -7,7 +7,7 @@ module Lakatan
     end
 
     it_behaves_like "api resource", 48 do
-      let(:resource_changes) do
+      let(:expected_attributes) do
         {
           name: "Primera entrevista startup",
           team_id: 100

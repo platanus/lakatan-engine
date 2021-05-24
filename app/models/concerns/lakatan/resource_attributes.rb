@@ -35,6 +35,19 @@ module Lakatan
       end
     end
 
+    def dynamic_attributes
+      attrs = {}
+
+      attributes[:attributes].attributes.each do |key, value|
+        attribute_name = key.to_sym
+        next if self.class.resource_attributes.include?(attribute_name)
+
+        attrs[attribute_name] = value
+      end
+
+      attrs
+    end
+
     def build_lakatan_class(resource_name)
       "Lakatan::Api::#{resource_name.to_s.classify}".constantize
     end
